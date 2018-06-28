@@ -124,3 +124,6 @@ fabric.properties
 ### AndroidStudio Patch ###
 
 !/gradle/wrapper/gradle-wrapper.jar
+.idea/codeStyles/Project.xml
+.idea/gradle.xml
+.idea/runConfigurations.xml
