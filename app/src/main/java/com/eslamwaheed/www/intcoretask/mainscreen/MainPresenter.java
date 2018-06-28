@@ -3,8 +3,13 @@ package com.eslamwaheed.www.intcoretask.mainscreen;
 import android.support.annotation.Nullable;
 
 import com.eslamwaheed.www.intcoretask.apimodels.modelinterfaces.MovieInt;
+import com.eslamwaheed.www.intcoretask.pojos.Movies;
+import com.eslamwaheed.www.intcoretask.utils.CustomEvent;
+import com.eslamwaheed.www.intcoretask.utils.CustomEventType;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 
 public class MainPresenter implements MainMVP.Presenter {
 
@@ -47,5 +52,11 @@ public class MainPresenter implements MainMVP.Presenter {
     @Override
     public void terminate() {
         EventBus.getDefault().unregister(this);
+    }
+
+    @Subscribe
+    public void MessageListOnLoad(CustomEvent event) {
+        if (event.getEventType() == CustomEventType.GET_MOVIES)
+            view.setResultList((Movies) event.getObject());
     }
 }

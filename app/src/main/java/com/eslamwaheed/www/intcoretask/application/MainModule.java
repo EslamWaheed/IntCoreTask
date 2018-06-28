@@ -1,6 +1,7 @@
 package com.eslamwaheed.www.intcoretask.application;
 
 import com.eslamwaheed.www.intcoretask.apimodels.modelinterfaces.MovieInt;
+import com.eslamwaheed.www.intcoretask.apimodels.modelsimplementations.MovieImpl;
 import com.eslamwaheed.www.intcoretask.mainscreen.MainMVP;
 import com.eslamwaheed.www.intcoretask.mainscreen.MainPresenter;
 
@@ -13,5 +14,10 @@ public class MainModule {
     @Provides
     public MainMVP.Presenter provideMainPresenter(MovieInt movieInt) {
         return new MainPresenter(movieInt);
+    }
+
+    @Provides
+    public MovieInt provideMovieInt() {
+        return new MovieImpl();
     }
 }

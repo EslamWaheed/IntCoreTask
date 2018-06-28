@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MovieApiClient {
 
-    private static final String Base_URL = "https://api.themoviedb.org/3/discover";
+    private static final String Base_URL = "https://api.themoviedb.org/3/discover/";
     public static final String API_KEY = "97d00ec2ce73d12ed605e60ff3bba8cc";
 
     private static HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
