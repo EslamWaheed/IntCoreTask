@@ -58,8 +58,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="52dp"
         android:background="#ffffff"
+        android:src="@mipmap/heart_unch"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_moviename"
-        app:srcCompat="@mipmap/heart_unch" />
+        app:layout_constraintTop_toBottomOf="@+id/textview_moviename" />
 
 </android.support.constraint.ConstraintLayout>
