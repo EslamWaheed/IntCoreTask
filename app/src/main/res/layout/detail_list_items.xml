@@ -11,11 +11,13 @@
         android:orientation="horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageview_comment_image"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:src="@mipmap/avengers" />
 
         <TextView
+            android:id="@+id/textview_comment_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -30,6 +32,7 @@
             android:layout_weight="1" />
 
         <ImageButton
+            android:id="@+id/imagebutton_comment_actions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -44,6 +47,7 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/textview_comment_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxLines="2"
@@ -51,6 +55,7 @@
             android:textStyle="italic" />
 
         <TextView
+            android:id="@+id/textview_comment_comment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -63,7 +68,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imagetest"
+        android:id="@+id/imageview_comment_big_image"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:paddingEnd="15dp"
@@ -89,6 +94,7 @@
             android:orientation="horizontal">
 
             <ImageButton
+                android:id="@+id/imagebutton_comment_heart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -96,6 +102,7 @@
                 android:src="@mipmap/heart_unch" />
 
             <TextView
+                android:id="@+id/textview_comment_heart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -111,6 +118,7 @@
             android:paddingStart="50dp">
 
             <ImageButton
+                android:id="@+id/imagebutton_comment_comments"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -118,6 +126,7 @@
                 android:src="@mipmap/comment" />
 
             <TextView
+                android:id="@+id/textview_comment_comments"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -147,6 +156,7 @@
 
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageview_comment_detail_image"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:src="@mipmap/avengers" />
@@ -159,6 +169,7 @@
             android:padding="10dp">
 
             <TextView
+                android:id="@+id/textview_comment_detail_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -168,6 +179,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/textview_comment_detail_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
