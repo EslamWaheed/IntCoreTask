@@ -5,9 +5,10 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MovieApiClient {
+public class ApiClient {
 
-    private static final String Base_URL = "https://api.themoviedb.org/3/discover/";
+    private static String Base_URL;
+
     public static final String API_KEY = "97d00ec2ce73d12ed605e60ff3bba8cc";
 
     private static HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -20,7 +21,8 @@ public class MovieApiClient {
 
     private static Retrofit retrofit = builder.build();
 
-    public static <S> S buildeService(Class<S> serviceType) {
+    public static <S> S buildeService(Class<S> serviceType, String Base_URL) {
+        ApiClient.Base_URL = Base_URL;
         return retrofit.create(serviceType);
     }
 }

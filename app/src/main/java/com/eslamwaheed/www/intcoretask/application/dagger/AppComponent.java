@@ -1,6 +1,7 @@
 package com.eslamwaheed.www.intcoretask.application.dagger;
 
 import com.eslamwaheed.www.intcoretask.application.MainModule;
+import com.eslamwaheed.www.intcoretask.detailscreen.DetailActivity;
 import com.eslamwaheed.www.intcoretask.mainscreen.MainActivity;
 
 import javax.inject.Singleton;
@@ -12,4 +13,6 @@ import dagger.Component;
 public interface AppComponent {
 
     void inject(MainActivity mainActivity);
+
+    void inject(DetailActivity detailActivity);
 }
