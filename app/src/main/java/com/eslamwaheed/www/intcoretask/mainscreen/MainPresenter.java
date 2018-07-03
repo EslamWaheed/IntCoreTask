@@ -55,7 +55,7 @@ public class MainPresenter implements MainMVP.Presenter {
     }
 
     @Subscribe
-    public void MessageListOnLoad(CustomEvent event) {
+    public void MoviesListOnLoad(CustomEvent event) {
         if (event.getEventType() == CustomEventType.GET_MOVIES)
             view.setResultList((Movies) event.getObject());
     }

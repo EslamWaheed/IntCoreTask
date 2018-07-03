@@ -7,7 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.eslamwaheed.www.intcoretask.R;
-import com.eslamwaheed.www.intcoretask.apimodels.retrofit.MovieApiClient;
+import com.eslamwaheed.www.intcoretask.apimodels.retrofit.ApiClient;
 import com.eslamwaheed.www.intcoretask.application.App;
 import com.eslamwaheed.www.intcoretask.pojos.Movies;
 
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements MainMVP.View {
 
         recyclerView.setAdapter(adapter);
 
-        presenter.loadMovies(MovieApiClient.API_KEY, "popularity.desc");
+        presenter.loadMovies(ApiClient.API_KEY, "popularity.desc");
     }
 
     @Override

@@ -20,8 +20,8 @@ import java.util.List;
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     private MainMVP.Presenter presenter;
-    private List<Result> resultList;
     private Context context;
+    private List<Result> resultList;
 
     public MainAdapter(MainMVP.Presenter presenter, Context context) {
         this.presenter = presenter;
