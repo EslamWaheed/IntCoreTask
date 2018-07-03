@@ -7,9 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.eslamwaheed.www.intcoretask.R;
-import com.eslamwaheed.www.intcoretask.apimodels.retrofit.ApiClient;
 import com.eslamwaheed.www.intcoretask.application.App;
-import com.eslamwaheed.www.intcoretask.mainscreen.MainAdapter;
 import com.eslamwaheed.www.intcoretask.pojos.Comment;
 
 import java.util.List;
@@ -25,27 +23,31 @@ public class DetailActivity extends AppCompatActivity implements DetailMVP.View 
     Context context;
 
     private RecyclerView recyclerView;
-    private MainAdapter adapter;
+    private DetailAdepter adapter;
     private RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_detail);
 
         ((App) getApplication()).getComponent().inject(this);
 
         presenter.setView(this);
-        recyclerView = findViewById(R.id.main_recyclerView);
+        recyclerView = findViewById(R.id.detail_recyclerView);
 
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-//        adapter = new MainAdapter(presenter, context);
+        adapter = new DetailAdepter(presenter, context);
 
         recyclerView.setAdapter(adapter);
 
-//        presenter.loadMovies(ApiClient.API_KEY, "popularity.desc");
+//        Result result = (Result) getIntent().getSerializableExtra("movie");
+
+        int pageId = getIntent().getIntExtra("pageId", 1);
+
+        presenter.loadComments(pageId);
     }
 
     @Override
@@ -55,6 +57,6 @@ public class DetailActivity extends AppCompatActivity implements DetailMVP.View 
 
     @Override
     public void setCommentList(List<Comment> commentList) {
-
+        adapter.refreshList(commentList);
     }
 }
