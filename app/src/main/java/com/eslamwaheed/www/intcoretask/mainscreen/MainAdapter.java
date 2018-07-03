@@ -37,8 +37,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Result result = resultList.get(position);
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+        final Result result = resultList.get(position);
 
         Picasso.with(context).load("http://image.tmdb.org/t/p/w185" + result.getPosterPath()).into(holder.imageview_movieimage);
         holder.textview_moviename.setText(result.getTitle());
@@ -48,6 +48,13 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             @Override
             public void onClick(View v) {
                 presenter.changeFavoriteState();
+            }
+        });
+
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.goToDetailActivity(result, holder.getAdapterPosition());
             }
         });
     }

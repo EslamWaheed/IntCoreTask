@@ -4,6 +4,7 @@ import android.support.annotation.Nullable;
 
 import com.eslamwaheed.www.intcoretask.apimodels.modelinterfaces.MovieInt;
 import com.eslamwaheed.www.intcoretask.pojos.Movies;
+import com.eslamwaheed.www.intcoretask.pojos.Result;
 import com.eslamwaheed.www.intcoretask.utils.CustomEvent;
 import com.eslamwaheed.www.intcoretask.utils.CustomEventType;
 
@@ -28,8 +29,8 @@ public class MainPresenter implements MainMVP.Presenter {
     }
 
     @Override
-    public void goToDetailActivity() {
-        view.onCardListItemClicked();
+    public void goToDetailActivity(Result result, int pageId) {
+        view.onCardListItemClicked(result, pageId);
     }
 
     @Override
