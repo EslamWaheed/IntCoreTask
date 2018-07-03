@@ -5,10 +5,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.ImageView;
 
 import com.eslamwaheed.www.intcoretask.R;
 import com.eslamwaheed.www.intcoretask.application.App;
 import com.eslamwaheed.www.intcoretask.pojos.Comment;
+import com.eslamwaheed.www.intcoretask.pojos.Result;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -21,6 +24,9 @@ public class DetailActivity extends AppCompatActivity implements DetailMVP.View 
 
     @Inject
     Context context;
+
+    private ImageView detail_big_image;
+    private ImageView detail_small_image;
 
     private RecyclerView recyclerView;
     private DetailAdepter adapter;
@@ -43,7 +49,15 @@ public class DetailActivity extends AppCompatActivity implements DetailMVP.View 
 
         recyclerView.setAdapter(adapter);
 
-//        Result result = (Result) getIntent().getSerializableExtra("movie");
+        detail_big_image = findViewById(R.id.detail_big_image);
+
+        detail_small_image = findViewById(R.id.detail_small_image);
+
+        Result result = (Result) getIntent().getSerializableExtra("movie");
+
+        Picasso.with(this).load("http://image.tmdb.org/t/p/w780" + result.getBackdropPath()).into(detail_big_image);
+
+        Picasso.with(this).load("http://image.tmdb.org/t/p/w92" + result.getPosterPath()).into(detail_small_image);
 
         int pageId = getIntent().getIntExtra("pageId", 1);
 
